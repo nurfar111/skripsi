@@ -23,14 +23,14 @@ if(isset($_POST['buynow'])){
     }
     
   // Mendapatkan jumlah yang diinputkan
-  $jumlah = $_POST['id'];
-    $tgl = $_POST['tgl'];
-    $idpem = $_SESSION['pelanggan']['id_pelanggan'];
-    $nmprod = $_POST['nmprod'];
+//   $jumlah = $_POST['id'];
+//     $tgl = $_POST['tgl'];
+    // $idpem = $_SESSION['pelanggan']['id_pelanggan'];
+//     $nmprod = $_POST['nmprod'];
   // Masukkan ke keranjang belanja
-// echo $tgl,$idpem;
+// echo $idpem;
 //   $_SESSION['keranjang'][$id_produk] = $jumlah;
-$koneksi->query("INSERT INTO pembelian(id_pelanggan,status_pembelian, tanggal_pembelian) VALUES('$idpem','$nmprod', '$tgl')");
+// $koneksi->query("INSERT INTO pembelian(id_pelanggan,status_pembelian, tanggal_pembelian) VALUES('$idpem','$nmprod', '$tgl')");
 // echo "<a href='https://wa.me/6285811000675?text=Nama%3A%0ANo.%20HP%3A%0AAlamat%3A%0APesanan%3A%0A' target='_blank'>
 //     </a>";
 // $headers =  getallheaders();
@@ -40,7 +40,7 @@ $koneksi->query("INSERT INTO pembelian(id_pelanggan,status_pembelian, tanggal_pe
 
 //   echo "<div class='alert alert-success'>Produk telah masuk ke keranjang</div>";
 // header('Location: https://wa.me/6285811000675?text=Nama%3A%0ANo.%20HP%3A%0AAlamat%3A%0APesanan%3A%0A');
-echo "<script>window.location.replace('https://wa.me/6285811000675?text=Nama%3A%0ANo.%20HP%3A%0AAlamat%3A%0APesanan%3A%0A')</script>";
+// echo "<script>window.location.replace('https://wa.me/6285811000675?text=Nama%3A%0ANo.%20HP%3A%0AAlamat%3A%0APesanan%3A%0A')</script>";
 // header_remove();
 // header("location:https://wa.me/6285811000675?text=Nama%3A%0ANo.%20HP%3A%0AAlamat%3A%0APesanan%3A%0A"); 
 // ob_start();
@@ -77,24 +77,26 @@ echo "<script>window.location.replace('https://wa.me/6285811000675?text=Nama%3A%
                         <h2><?= $detail['nama_produk']; ?></h2>
                         <h4>Rp. <?= number_format($detail['harga_produk']); ?>,-</h4>
                         <!-- <h5>Stok : <?= $detail['stok_produk']; ?></h5> -->
-                        <form action="" method="post">
-                            <div class="form-group">
-                                <div class="input-group">
-                                    <p>masukkan tanggal</p>
-                                    <input class="" type="date" name="tgl" id="tgl" required>
-                                </div>
-                                <input type="hidden" name="id" value="<?=$detail['id_produk'] ?>">
-                                <input type="hidden" name="nmprod" value="<?=$detail['nama_produk'];?>">
-                                <div class="input-group">
-                                    <!-- <input type="number" min="1" max="<?= $detail['stok_produk']; ?>"
+                        <!-- <form action="" method="post"> -->
+                        <div class="form-group">
+                            <div class="input-group">
+                                <!-- <p>masukkan tanggal</p> -->
+                                <!-- <input class="" type="date" name="tgl" id="tgl" required> -->
+                            </div>
+                            <input type="hidden" name="id" value="<?=$detail['id_produk'] ?>">
+                            <input type="hidden" name="nmprod" value="<?=$detail['nama_produk'];?>">
+                            <div class="input-group">
+                                <!-- <input type="number" min="1" max="<?= $detail['stok_produk']; ?>"
                                         class="form-control" name="jumlah"> -->
-                                    <div class="input-group-btn">
-                                        <button class="btn btn-primary " name="buynow"><a
-                                                style="color:white">Pesan</a></button>
-                                    </div>
+                                <div class="input-group-btn">
+                                    <button class="btn btn-primary ">
+                                        <a clas="btn btn-primary"
+                                            href="booking.php?idprod=<?=$detail['id_produk'] ?>&iduser=<?=$_SESSION['pelanggan']['id_pelanggan'];?>">Pesan</a>
+                                    </button>
                                 </div>
                             </div>
-                        </form>
+                        </div>
+                        <!-- </form> -->
                         <div class="description">
                             <h5><i>Description</i></h5>
                             <p><?=$detail['deskripsi_produk'];?></p>

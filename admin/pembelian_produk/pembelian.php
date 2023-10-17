@@ -20,8 +20,8 @@
         <tr>
             <td><?= $no; ?></td>
             <td><?= $pecah["nama_pelanggan"]; ?></td>
-            <td><?= date("d F Y", strtotime($pecah["tanggal_pembelian"])); ?></td>
-            <td><?= $pecah["status_pembelian"]; ?></td>
+            <td><?= date("d F Y", strtotime($pecah["tanggal_book"])); ?></td>
+            <td><?= $pecah["nama_paket"]; ?></td>
             <td><?= $pecah["telepon_pelanggan"] ?></td>
             <td>
                 <a href="index.php?halaman=detail&id=<?= $pecah["id_pembelian"]; ?>"

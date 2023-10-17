@@ -11,7 +11,8 @@ $detail = $ambil->fetch_assoc();
 <table class="table table-bordered">
     <thead>
         <tr>
-            <th>Tanggal Booking</th>
+            <th>Tanggal Order</th>
+            <th>Tanggal Acara(booking)</th>
             <th>Tipe Paket</th>
             <th>Nama Pemesan</th>
             <th>Nomor Telepon</th>
@@ -24,10 +25,13 @@ $detail = $ambil->fetch_assoc();
 
         <tr>
             <td>
-                <?= $detail["tanggal_pembelian"]; ?><br>
+                <?= $detail["tgl_pesan"]; ?><br>
             </td>
             <td>
-                <?= $detail["status_pembelian"]; ?><br>
+                <?= $detail["tanggal_book"]; ?><br>
+            </td>
+            <td>
+                <?= $detail["nama_paket"]; ?><br>
             </td>
             <td>
                 <?= $detail["nama_pelanggan"]; ?><br>

@@ -26,13 +26,7 @@ if(isset($_POST['login'])){
     $_SESSION["pelanggan"] = $akun;
     echo "<div class='alert alert-success'>Login sukses</div>";
 
-    // Jika sudah belanja
-    if(isset($_SESSION['keranjang']) OR !empty($_SESSION['keranjang'])){
-      echo "<meta http-equiv='refresh' content='1;url=checkout.php'>";
-    }
-    else{
-      echo "<meta http-equiv='refresh' content='1;url=riwayat.php'>";
-    }
+      echo "<meta http-equiv='refresh' content='1;url=index.php'>";
   }
   else{
     // echo "<script>alert('Gagal login')</script>";
@@ -44,29 +38,29 @@ if(isset($_POST['login'])){
 ?>
 
 <div class="container">
-  <div class="row">
-    <div class="col-md-4 col-md-offset-4">
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h3 class="panel-title">Login Pelanggan</h3>
-        </div>
-        <div class="panel-body">
-          <form action="" method="post">
-            <div class="form-group">
-              <label for="">Email</label>
-              <input type="email" class="form-control" name="email" required>
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Login Pelanggan</h3>
+                </div>
+                <div class="panel-body">
+                    <form action="" method="post">
+                        <div class="form-group">
+                            <label for="">Email</label>
+                            <input type="email" class="form-control" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Password</label>
+                            <input type="password" class="form-control" name="password" required>
+                        </div>
+                        <button type="submit" name="login" class="btn btn-primary">Login</button>
+                    </form>
+                </div>
             </div>
-            <div class="form-group">
-              <label for="">Password</label>
-              <input type="password" class="form-control" name="password" required>
-            </div>
-            <button type="submit" name="login" class="btn btn-primary">Login</button>
-          </form>
         </div>
-      </div>
     </div>
-  </div>
 </div>
-  <?php
+<?php
 include 'footer.php';
 ?>
