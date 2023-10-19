@@ -62,13 +62,13 @@ if(!isset($_SESSION['admin'])){
                         <a href="index.php"><i class="fa fa-dashboard"></i>Home</a>
                     </li>
                     <li>
-                        <a href="index.php?halaman=produk"><i class="fa fa-cube"></i> Produk</a>
+                        <a href="index.php?halaman=produk"><i class="fa fa-cube"></i> Paket</a>
                     </li>
                     <li>
                         <a href="index.php?halaman=kategori"><i class="fa fa-tags"></i> Kategori</a>
                     </li>
                     <li>
-                        <a href="index.php?halaman=pembelian"><i class="fa fa-shopping-cart"></i>Pembelian</a>
+                        <a href="index.php?halaman=pembelian"><i class="fa fa-shopping-cart"></i>Penyewaan</a>
                     </li>
                     <li>
                         <a href="index.php?halaman=laporan_pembelian"><i class="fa fa-file"></i>Laporan</a>

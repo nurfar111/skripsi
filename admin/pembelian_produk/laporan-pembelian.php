@@ -16,7 +16,7 @@ if(isset($_POST['kirim'])){
 ?>
 
 
-<h2>Laporan Pembelian dari <?= $tgl_mulai; ?> hingga <?= $tgl_selesai; ?></h2>
+<h2>Laporan Penyewaan dari <?= $tgl_mulai; ?> hingga <?= $tgl_selesai; ?></h2>
 <hr>
 
 <form action="" method="post">

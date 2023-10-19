@@ -1,4 +1,4 @@
-<h2>Data Pemesanan</h2>
+<h2>Data Penyewaan</h2>
 
 <table class="table table-bordered">
     <thead>
@@ -12,7 +12,6 @@
         </tr>
     </thead>
     <tbody>
-
         <?php $no=1; ?>
         <!-- menggabungkan (join) tabel pelanggan dengan tabel pelanggan -->
         <?php $ambil = $koneksi->query("SELECT * FROM pembelian JOIN pelanggan ON pembelian.id_pelanggan = pelanggan.id_pelanggan"); ?>

@@ -11,41 +11,37 @@ $iduser = $_GET['iduser'];
 $ambil = $koneksi->query("SELECT * FROM produk,pelanggan WHERE produk.id_produk='$id_produk' AND pelanggan.id_pelanggan='$iduser'");
 $detail = $ambil->fetch_assoc();
 
+// cek ada inputan
 if(isset($_POST['booknow'])){
-
+    // Get tanggal
     $tglbook = $_POST['tgl_booking'];
-
+    // cek ke database
     $cektgl = $koneksi->query("SELECT * FROM pembelian WHERE tanggal_book='$tglbook' ");
-    // echo "<script>location='booking.php?idprod='$idprod'&iduser='$iduser';</script>";
+    // cek ketersediaan tanggal
   $tgl_tersedia = $cektgl->num_rows;
-  if($tgl_tersedia == 1){
-    // Mendapatkan aku dalam bentuk array
-    // echo "<script>location='booking.php?idprod='$idprod'&iduser='$iduser';</script>";
-    // echo $tglbook;
-    echo "<div class='alert alert-danger'>Tanggal Book tidak tersedia</div>";
-    // echo "<script>location='login.php';</script>";
-  }
-  else{
 
-    // print_r($_POST);
-     $tglpesan = date("Y-m-d");
+    //   validasi
+  if($tgl_tersedia == 1){
+    echo "<div class='alert alert-danger'>Tanggal Book tidak tersedia</div>";
+  }else{
+
+    //    inisialisasi
+    $tglpesan = date("Y-m-d");
     $tglbook = $_POST['tgl_booking'];
     $nama=$_POST['nama_pelanggan'];
     $nopel=$detail['telepon_pelanggan'];
     $alamat=$_POST['alamat_pelanggan'];
     $namprod=$detail['nama_produk'];
+    // insert ke db
     $sqlll = $koneksi->query("INSERT INTO pembelian(id_pelanggan,id_produk,tanggal_book,alamat_book,nama_paket, tgl_pesan) VALUES('$iduser','$id_produk','$tglbook','$alamat','$namprod', '$tglpesan')");
-    
+    // cek query berhasil atau tidak
     if($sqlll){
-
+        // kondisi sukses input data ke db langsung redirect ke wa
         echo '<script>window.location.replace("https://wa.me/6285811000675?text=Halo%20saya%20ingin%20pesan=||Nama='.$nama.'|No.%20HP='.$nopel.'|Alamat='.$alamat.'|Paket='.$namprod.'")</script>';
     }else{
+        // kondisi gagal input ke database
         echo "<div class='alert alert-success'>Tanggal Tersedia</div>";
     }
-    // echo "<script>alert('Gagal login')</script>";
-    // echo "<script>location='login.php';</script>";
-    // echo 'location.href = "component/hapus.php?id= '+$id;
-		// echo "<meta http-equiv='refresh' content='1;>";
   }
 }
 
