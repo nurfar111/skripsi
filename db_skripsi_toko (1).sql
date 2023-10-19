@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 17 Okt 2023 pada 06.13
+-- Waktu pembuatan: 19 Okt 2023 pada 14.07
 -- Versi server: 10.4.11-MariaDB
 -- Versi PHP: 7.4.1
 
@@ -120,7 +120,9 @@ INSERT INTO `pembelian` (`id_pembelian`, `id_pelanggan`, `tanggal_book`, `id_pro
 (11, 6, '2023-11-02', 25, 'jl. h nawi no 7. jakarta, indonesia', 'PAKET WEDDING 4', '2023-10-17'),
 (12, 6, '2023-10-31', 25, 'jl. h nawi no 7. jakarta, indonesia', 'PAKET WEDDING 2', '2023-10-17'),
 (13, 6, '2023-10-07', 19, 'jl. h nawi no 7. jakarta, indonesia', 'PAKET WEDDING 1', '2023-10-17'),
-(14, 9, '2023-11-10', 19, 'jakarta city', 'Tenda Camping Compass Alloy 2-3P', '2023-10-17');
+(14, 9, '2023-11-10', 19, 'jakarta city', 'Tenda Camping Compass Alloy 2-3P', '2023-10-17'),
+(15, 6, '2023-10-25', 20, 'jl. h nawi no 7. jakarta, indonesia', 'Tenda Camping Compass Fiber 4-5P', '2023-10-19'),
+(16, 6, '2023-11-01', 30, 'jl. h nawi no 7. jakarta, indonesia', 'gsee', '2023-10-19');
 
 -- --------------------------------------------------------
 
@@ -133,30 +135,28 @@ CREATE TABLE `produk` (
   `id_kategori` int(5) NOT NULL,
   `nama_produk` varchar(100) NOT NULL,
   `harga_produk` int(11) NOT NULL,
-  `berat_produk` int(11) NOT NULL,
   `foto_produk` varchar(100) NOT NULL,
-  `deskripsi_produk` text NOT NULL,
-  `stok_produk` int(5) NOT NULL
+  `deskripsi_produk` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `produk`
 --
 
-INSERT INTO `produk` (`id_produk`, `id_kategori`, `nama_produk`, `harga_produk`, `berat_produk`, `foto_produk`, `deskripsi_produk`, `stok_produk`) VALUES
-(19, 1, 'Tenda Camping Compass Alloy 2-3P', 600000, 1900, 'WhatsApp Image 2022-07-18 at 13.18.35.jpeg', 'Tenda Ultralight dengan bobot sangat ringan dan harganya pun tidak berat, berat hanya 1,9 kg sangat cocok untuk anda yang mendambakan tenda Ultralight yang ringan dengan harga bersahabat, dengan frame yang sudah alloy. tenda ini mirip dengan tenda Great outdoor fly air, dengan type dan speksifikasi yang mirip tapi harganya lebih murah.\r\n\r\nSpeksifikasi :\r\nCap : 2-3 Person\r\nUkuran : 210x(140+50)x110Cm\r\nFlysheet: 210T polyester PU3000mm\r\nInner : mesh\r\nFloor : 210T polyester PU3000mm\r\nPole : D7.9mm x 2 pcs 7001 Alumunium\r\nPasak : 4mm x 18cm x 10 pcs steel\r\nPacking size : 40 x 16 x 16cm\r\n\r\nready stok warna biru aja seperti gambar', 3),
-(20, 1, 'Tenda Camping Compass Fiber 4-5P', 630000, 1900, 'WhatsApp Image 2022-07-18 at 13.18.36.jpeg', 'Ready Tenda Lwy Compass Fiber Kapasitas 4-5 Orang ,Double Layer, Alas Terpal, Frame Fiberglass ,Double Pintu Dan Frame / Tiang Tambahan Untuk Kanopi Teras \r\nCek Gambar. \r\n\r\n- Spek :\r\n- Warna: orange dan biru\r\n\r\n- Tenda Lwy Compass 4org (Muat 5org) Original.\r\n(Sesuai Digambar)\r\n- Size : 210 x 210 x 140cm \r\n- Material Outter : 100% Polyester PU3000mm\r\n- Inner Lapisan Jaring\r\n- Cloth : 190T Waterproof\r\n- Double Pintu\r\n- Pole : 7,9mm Fiberglass\r\n- Terdapat Frame / Tiang Tambahan (Untuk Kanopi Depan)\r\n- Weight : 4,1kgs\r\n- Packing Size : 60cm x 15cm x 15cm\r\n\r\n- Sangat Cocok Untuk Kegiatan Camping, Outdoor, Hiking , Holiday Dan Traveling\r\n(Keep Safety Your Trip)', 0),
-(23, 1, 'Tenda Camping Cotrex M27 Fiber 4-5P', 850000, 1900, 'WhatsApp Image 2022-07-18 at 13.18.40.jpeg', 'SPESIFIKASI PRODUCT\r\n\r\n190TPu 1500mm Polyester\r\nInner : Polyester Breathable\r\nFloor : 210TPu 3500mm Polyester\r\nPole : dia 8,5mm 2 pc\r\n+1 pc fibergalss\r\nAPPROXIMATE PACKED SIZE ; \r\n- Inner: 50+150+50*220*120 cm, fly \r\n- Outer: L250*W220*H120cm \r\n\r\nFEATURE :\r\n* Two person Operation\r\n* UV protected\r\n* Mould Resistant\r\n* Wont Rust\r\nKapasitas 4 Orang\r\nFull Layer, Waterproof\r\n\r\n\r\nBenefits Product : \"mempunyai durability yang tinggi di design tahan dalam 2 tahun penggunaan\" dibuat melalui sistem pabrikasi dengan teknologi modern.\r\nRegion Manufaktur : \" Made In Indonesia\"', 4),
-(24, 1, 'Tenda Camping Bestway Monodome Pavillo 2-3P', 260000, 1900, 'WhatsApp Image 2022-07-18 at 13.18.40 (1).jpeg', 'Bestway Tenda Monodome Pavillo X2 Tent\r\n\r\nPerjalanan berkemah menjadi lebih mudah dan nyaman dengan Bestway Monodome X2 Tent.\r\n\r\nTenda ini memiliki perlindungan dasar PE tahan air yang membuat kelembaban di dalam tenda.  Tenda juga dilengkapi dengan saku dalam sehingga Anda akan memiliki tempat untuk menyimpan barang-barang pribadi Anda.\r\n\r\nBestway Monodome X2 mudah untuk setup dan pemasangannya. \r\n\r\nFitur - Kokoh, pintu jaring anti-serangga.\r\nBahan: 170T polyester PA300mm dilapisi.\r\nAlas/ Perlindungan tanah: 110G / M2 PE.\r\n\r\nMudah untuk pemasangan dan nyaman untuk dibawa.\r\nKualitas, Kenyamanan dan Keamanan Tinggi Bestway Product suduh lulus uji standard international untuk kenyamanan, kelayakan dan keamanan. Terbuat dari bahan berkualitas tinggi dan desain yang spesial. Memberikan Manfaat Lebih Bestway Product sudah terbukti sangat bermanfaat bagi banyak penggunanya, mulai dari kasur angin/ airbed, sleeping bag, sofa angin/ air sofabed, berbagai macam kolam, kacamata renang, arena bermain anak, tenda camping, perahu karet, dsb.', 4),
-(25, 2, 'Headlamp Jaks 6', 40000, 500, 'WhatsApp Image 2022-07-18 at 13.18.47.jpeg', 'Lampu dengan 3 mode pencahayaan, Headlamp ini berbentuk mini dan dapat di ikatkan di kepala Anda, membantu penelusuran di tempat gelap, dan perjalanan di malam hari.\r\n\r\nFEATURES\r\n3 Modes Headlight\r\nTerdapat 3 mode pencahayaan lampu yang dapat Anda gunakan untuk menerangi perjalanan Anda dimalam hari atau di tempat gelap.\r\n\r\n45 Degree Rotate\r\nSenter kepala ini sangat fleksibel, dapat digerakkan sebanyak 45 derajat untuk keperluan menyinari area yang Anda inginkan tanpa harus memaksakan kepala Anda mengarah ke arah yang dituju.\r\n\r\nAdjustable Headstrap\r\nIkatan kepala dari Headlamp LED flashlight ini dapat diatur menyesuaikan dengan bentuk kepala Anda.\r\n\r\n18650 Batteries\r\nAnda dapat menggunakan 18650 batteries untuk penjelajahan yang lebih lama dengan headlamp ini, Anda bisa mengkombinasikan kapasitas baterai agar dapat digunakan dalam jangka waktu yang lama.\r\n\r\nPACKAGE CONTENTS\r\nBarang-barang yang anda dapat dalam kotak produk:\r\n\r\n1 x Headlamp Flashlight Headlight LED 3 Modes COB - KX-1804\r\n\r\nLED	Model of LED: 1*XPE +1*COB\r\nLuminious Flux	Lumens: 180lm (COB), 100lm (XPE)\r\nBattery Type	18650\r\nLength	8.5cm x 3.8cm x 4cm\r\nOthers	splashproof', 5),
-(26, 2, 'awda', 342, 42, 'WhatsApp Image 2022-07-18 at 13.18.35.jpeg', '                              gvegefa                        ', 23),
-(28, 2, 'KARYATI', 242, 242, 'WhatsApp Image 2022-07-18 at 13.18.43.jpeg', '                    afawfaw                ', 424),
-(29, 3, 'Evi Sundari', 424, 1241, 'WhatsApp Image 2022-07-18 at 13.18.43 (1).jpeg', '                    afafawf                ', 424),
-(30, 3, 'gsee', 42, 42, 'WhatsApp Image 2022-07-18 at 13.18.36.jpeg', '                    afaf                ', 424),
-(31, 3, 'rgsrg', 4221, 424, 'WhatsApp Image 2022-07-18 at 13.18.40.jpeg', '                    efeaf                ', 44),
-(32, 3, 'drhfh', 24, 242, 'WhatsApp Image 2022-07-18 at 13.18.40 (1).jpeg', '                    gsg                ', 243),
-(33, 6, 'hdrhs', 342, 3424, 'WhatsApp Image 2022-07-18 at 13.18.43.jpeg', '                    rdb                ', 43),
-(34, 6, 'hmhg', 24, 34, 'WhatsApp Image 2022-07-18 at 13.18.47.jpeg', '                    sgg                ', 42);
+INSERT INTO `produk` (`id_produk`, `id_kategori`, `nama_produk`, `harga_produk`, `foto_produk`, `deskripsi_produk`) VALUES
+(19, 1, 'Tenda Campin', 600000, 'WhatsApp Image 2022-07-18 at 13.18.35.jpeg', '          Tenda Ultralight dengan bobot sangat ringan dan harganya pun tidak berat, berat hanya 1,9 kg sangat cocok untuk anda yang mendambakan tenda Ultralight yang ringan dengan harga bersahabat, dengan frame yang sudah alloy. tenda ini mirip dengan tenda Great outdoor fly air, dengan type dan speksifikasi yang mirip tapi harganya lebih murah.\r\n\r\nSpeksifikasi :\r\nCap : 2-3 Person\r\nUkuran : 210x(140+50)x110Cm\r\nFlysheet: 210T polyester PU3000mm\r\nInner : mesh\r\nFloor : 210T polyester PU3000mm\r\nPole : D7.9mm x 2 pcs 7001 Alumunium\r\nPasak : 4mm x 18cm x 10 pcs steel\r\nPacking size : 40 x 16 x 16cm\r\n\r\nready stok warna biru aja seperti gambar        '),
+(20, 1, 'Tenda Camping Compass Fiber 4-5P', 630000, 'WhatsApp Image 2022-07-18 at 13.18.36.jpeg', 'Ready Tenda Lwy Compass Fiber Kapasitas 4-5 Orang ,Double Layer, Alas Terpal, Frame Fiberglass ,Double Pintu Dan Frame / Tiang Tambahan Untuk Kanopi Teras \r\nCek Gambar. \r\n\r\n- Spek :\r\n- Warna: orange dan biru\r\n\r\n- Tenda Lwy Compass 4org (Muat 5org) Original.\r\n(Sesuai Digambar)\r\n- Size : 210 x 210 x 140cm \r\n- Material Outter : 100% Polyester PU3000mm\r\n- Inner Lapisan Jaring\r\n- Cloth : 190T Waterproof\r\n- Double Pintu\r\n- Pole : 7,9mm Fiberglass\r\n- Terdapat Frame / Tiang Tambahan (Untuk Kanopi Depan)\r\n- Weight : 4,1kgs\r\n- Packing Size : 60cm x 15cm x 15cm\r\n\r\n- Sangat Cocok Untuk Kegiatan Camping, Outdoor, Hiking , Holiday Dan Traveling\r\n(Keep Safety Your Trip)'),
+(23, 1, 'Tenda Camping Cotrex M27 Fiber 4-5P', 850000, 'WhatsApp Image 2022-07-18 at 13.18.40.jpeg', 'SPESIFIKASI PRODUCT\r\n\r\n190TPu 1500mm Polyester\r\nInner : Polyester Breathable\r\nFloor : 210TPu 3500mm Polyester\r\nPole : dia 8,5mm 2 pc\r\n+1 pc fibergalss\r\nAPPROXIMATE PACKED SIZE ; \r\n- Inner: 50+150+50*220*120 cm, fly \r\n- Outer: L250*W220*H120cm \r\n\r\nFEATURE :\r\n* Two person Operation\r\n* UV protected\r\n* Mould Resistant\r\n* Wont Rust\r\nKapasitas 4 Orang\r\nFull Layer, Waterproof\r\n\r\n\r\nBenefits Product : \"mempunyai durability yang tinggi di design tahan dalam 2 tahun penggunaan\" dibuat melalui sistem pabrikasi dengan teknologi modern.\r\nRegion Manufaktur : \" Made In Indonesia\"'),
+(24, 1, 'Tenda Camping Bestway Monodome Pavillo 2-3P', 260000, 'WhatsApp Image 2022-07-18 at 13.18.40 (1).jpeg', 'Bestway Tenda Monodome Pavillo X2 Tent\r\n\r\nPerjalanan berkemah menjadi lebih mudah dan nyaman dengan Bestway Monodome X2 Tent.\r\n\r\nTenda ini memiliki perlindungan dasar PE tahan air yang membuat kelembaban di dalam tenda.  Tenda juga dilengkapi dengan saku dalam sehingga Anda akan memiliki tempat untuk menyimpan barang-barang pribadi Anda.\r\n\r\nBestway Monodome X2 mudah untuk setup dan pemasangannya. \r\n\r\nFitur - Kokoh, pintu jaring anti-serangga.\r\nBahan: 170T polyester PA300mm dilapisi.\r\nAlas/ Perlindungan tanah: 110G / M2 PE.\r\n\r\nMudah untuk pemasangan dan nyaman untuk dibawa.\r\nKualitas, Kenyamanan dan Keamanan Tinggi Bestway Product suduh lulus uji standard international untuk kenyamanan, kelayakan dan keamanan. Terbuat dari bahan berkualitas tinggi dan desain yang spesial. Memberikan Manfaat Lebih Bestway Product sudah terbukti sangat bermanfaat bagi banyak penggunanya, mulai dari kasur angin/ airbed, sleeping bag, sofa angin/ air sofabed, berbagai macam kolam, kacamata renang, arena bermain anak, tenda camping, perahu karet, dsb.'),
+(25, 2, 'Headlamp Jaks 6', 40000, 'WhatsApp Image 2022-07-18 at 13.18.47.jpeg', 'Lampu dengan 3 mode pencahayaan, Headlamp ini berbentuk mini dan dapat di ikatkan di kepala Anda, membantu penelusuran di tempat gelap, dan perjalanan di malam hari.\r\n\r\nFEATURES\r\n3 Modes Headlight\r\nTerdapat 3 mode pencahayaan lampu yang dapat Anda gunakan untuk menerangi perjalanan Anda dimalam hari atau di tempat gelap.\r\n\r\n45 Degree Rotate\r\nSenter kepala ini sangat fleksibel, dapat digerakkan sebanyak 45 derajat untuk keperluan menyinari area yang Anda inginkan tanpa harus memaksakan kepala Anda mengarah ke arah yang dituju.\r\n\r\nAdjustable Headstrap\r\nIkatan kepala dari Headlamp LED flashlight ini dapat diatur menyesuaikan dengan bentuk kepala Anda.\r\n\r\n18650 Batteries\r\nAnda dapat menggunakan 18650 batteries untuk penjelajahan yang lebih lama dengan headlamp ini, Anda bisa mengkombinasikan kapasitas baterai agar dapat digunakan dalam jangka waktu yang lama.\r\n\r\nPACKAGE CONTENTS\r\nBarang-barang yang anda dapat dalam kotak produk:\r\n\r\n1 x Headlamp Flashlight Headlight LED 3 Modes COB - KX-1804\r\n\r\nLED	Model of LED: 1*XPE +1*COB\r\nLuminious Flux	Lumens: 180lm (COB), 100lm (XPE)\r\nBattery Type	18650\r\nLength	8.5cm x 3.8cm x 4cm\r\nOthers	splashproof'),
+(26, 2, 'awda', 342, 'WhatsApp Image 2022-07-18 at 13.18.35.jpeg', '                              gvegefa                        '),
+(28, 2, 'KARYATI', 242, 'WhatsApp Image 2022-07-18 at 13.18.43.jpeg', '                    afawfaw                '),
+(29, 3, 'Evi Sundari', 424, 'WhatsApp Image 2022-07-18 at 13.18.43 (1).jpeg', '                    afafawf                '),
+(30, 3, 'gsee', 42, 'WhatsApp Image 2022-07-18 at 13.18.36.jpeg', '                    afaf                '),
+(31, 3, 'rgsrg', 4221, 'WhatsApp Image 2022-07-18 at 13.18.40.jpeg', '                    efeaf                '),
+(32, 3, 'drhfh', 24, 'WhatsApp Image 2022-07-18 at 13.18.40 (1).jpeg', '                    gsg                '),
+(33, 6, 'hdrhs', 342, 'WhatsApp Image 2022-07-18 at 13.18.43.jpeg', '                    rdb                '),
+(34, 6, 'hmhg', 24, 'WhatsApp Image 2022-07-18 at 13.18.47.jpeg', '                    sgg                ');
 
 -- --------------------------------------------------------
 
@@ -258,7 +258,7 @@ ALTER TABLE `pelanggan`
 -- AUTO_INCREMENT untuk tabel `pembelian`
 --
 ALTER TABLE `pembelian`
-  MODIFY `id_pembelian` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id_pembelian` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT untuk tabel `produk`
